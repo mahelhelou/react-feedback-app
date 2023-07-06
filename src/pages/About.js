@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
-import Card from '../components/shared/Card'
+import Card from '../shared/Card'
 
-function AboutPage(props) {
+function About(props) {
   return (
     <Card>
       <div className='about'>
         <h1>About This Project</h1>
-        <p>This is a React app to leave feedback for a product or service</p>
-        <p>Version: 1.0.0</p>
+        <p>A React app to leave feedback and ratings from the clients.</p>
 
         <p>
           <Link to='/'>Back To Home</Link>
@@ -17,4 +16,4 @@ function AboutPage(props) {
   )
 }
 
-export default AboutPage
+export default About

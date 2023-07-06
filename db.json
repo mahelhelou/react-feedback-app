@@ -1,29 +1,14 @@
 {
   "feedback": [
     {
-      "id": 1,
+      "text": "Elhelou is an amazing WordPress developer. I will handle all my next projects with him.",
       "rating": 10,
-      "text": "This is feedback item 1 coming from the backend"
+      "id": 1
     },
     {
-      "id": 2,
-      "rating": 8,
-      "text": "This is feedback item 2 coming from the backend"
-    },
-    {
-      "text": "Updated all packages to latest",
-      "rating": 6,
-      "id": 4
-    },
-    {
-      "text": "Another review added for testing purposes",
-      "rating": 5,
-      "id": 5
-    },
-    {
-      "text": "I can't wait until building my next React.js app!",
-      "rating": 5,
-      "id": 6
+      "text": "Don't be afraid of talking pure Business wieth Elhelou, he'll understand you very well.",
+      "rating": 10,
+      "id": 2
     }
   ]
 }

@@ -1,11 +1,11 @@
-import { createContext, useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 
 const FeedbackContext = createContext()
 
-export const FeedbackProvider = ({ children }) => {
+export const FeedbackProvider = (props) => {
   const [isLoading, setIsLoading] = useState(true)
   const [feedback, setFeedback] = useState([])
-  const [feedbackEdit, setFeedbackEdit] = useState({
+  const [editFeedback, setEditFeedback] = useState({
     item: {},
     edit: false,
   })
@@ -62,17 +62,15 @@ export const FeedbackProvider = ({ children }) => {
     // NOTE: no need to spread data and item
     setFeedback(feedback.map((item) => (item.id === id ? data : item)))
 
-    // FIX: this fixes being able to add a feedback after editing
-    // credit to Jose https://www.udemy.com/course/react-front-to-back-2022/learn/lecture/29768200#questions/16462688
-    setFeedbackEdit({
+    setEditFeedback({
       item: {},
       edit: false,
     })
   }
 
   // Set item to be updated
-  const editFeedback = (item) => {
-    setFeedbackEdit({
+  const feedbackEdit = (item) => {
+    setEditFeedback({
       item,
       edit: true,
     })
@@ -82,15 +80,15 @@ export const FeedbackProvider = ({ children }) => {
     <FeedbackContext.Provider
       value={{
         feedback,
-        feedbackEdit,
+        editFeedback,
         isLoading,
         deleteFeedback,
         addFeedback,
-        editFeedback,
+        feedbackEdit,
         updateFeedback,
       }}
     >
-      {children}
+      {props.children}
     </FeedbackContext.Provider>
   )
 }

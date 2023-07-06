@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types'
 
-function Card({ children, reverse }) {
+function Card(props) {
   // return <div className={`card ${reverse && 'reverse'}`}>{children}</div>
 
   return (
     <div
       className='card'
       style={{
-        backgroundColor: reverse ? 'rgba(0,0,0,0.4)' : '#fff',
-        color: reverse ? '#fff' : '#000',
+        backgroundColor: props.reverse ? 'rgba(0,0,0,0.4)' : '#fff',
+        color: props.reverse ? '#fff' : '#000',
       }}
     >
-      {children}
+      {props.children}
     </div>
   )
 }

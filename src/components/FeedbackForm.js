@@ -1,7 +1,9 @@
-import { useState, useContext, useEffect } from 'react'
-import RatingSelect from './RatingSelect'
+import { useState, useEffect, useContext } from 'react'
+
 import Card from '../shared/Card'
 import Button from '../shared/Button'
+import RatingSelect from './RatingSelect'
+
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackForm() {
@@ -10,16 +12,16 @@ function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
 
-  const { addFeedback, feedbackEdit, updateFeedback } =
+  const { addFeedback, editFeedback, updateFeedback } =
     useContext(FeedbackContext)
 
   useEffect(() => {
-    if (feedbackEdit.edit === true) {
+    if (editFeedback.edit === true) {
       setBtnDisabled(false)
-      setText(feedbackEdit.item.text)
-      setRating(feedbackEdit.item.rating)
+      setText(editFeedback.item.text)
+      setRating(editFeedback.item.rating)
     }
-  }, [feedbackEdit])
+  }, [editFeedback])
 
   // NOTE: This should be checking input value not state as state won't be the updated value until the next render of the component
 
@@ -48,8 +50,8 @@ function FeedbackForm() {
         rating,
       }
 
-      if (feedbackEdit.edit === true) {
-        updateFeedback(feedbackEdit.item.id, newFeedback)
+      if (editFeedback.edit === true) {
+        updateFeedback(editFeedback.item.id, newFeedback)
       } else {
         addFeedback(newFeedback)
       }

@@ -7,8 +7,9 @@ import RatingSelect from './RatingSelect'
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackForm() {
-  const [text, setText] = useState('')
+  // States
   const [rating, setRating] = useState(10)
+  const [text, setText] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
 
@@ -23,27 +24,26 @@ function FeedbackForm() {
     }
   }, [editFeedback])
 
-  // NOTE: This should be checking input value not state as state won't be the updated value until the next render of the component
+  const handleTextChange = (e) => {
+    const value = e.target.value
 
-  // prettier-ignore
-  const handleTextChange = ({ target: { value } }) => { // 👈  get the value
     if (value === '') {
       setBtnDisabled(true)
       setMessage(null)
-
-  // prettier-ignore
-    } else if (value.trim().length < 10) { // 👈 check for less than 10
+    } else if (value.trim().length < 10) {
       setMessage('Text must be at least 10 characters')
       setBtnDisabled(true)
     } else {
       setMessage(null)
       setBtnDisabled(false)
     }
+
     setText(value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     if (text.trim().length > 10) {
       const newFeedback = {
         text,
@@ -56,14 +56,13 @@ function FeedbackForm() {
         addFeedback(newFeedback)
       }
 
-      // NOTE: reset to default state after submission
-      setBtnDisabled(true) // 👈  add this line to reset disabled
-      setRating(10) //👈 add this line to set rating back to 10
+      // UX: Reset to default state after submission
+      setBtnDisabled(true)
+      setRating(10)
       setText('')
     }
   }
 
-  // NOTE: pass selected to RatingSelect so we don't need local duplicate state
   return (
     <Card>
       <form onSubmit={handleSubmit}>

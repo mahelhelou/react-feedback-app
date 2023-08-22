@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import FeedbackItem from './FeedbackItem'
-import Spinner from '../shared/Spinner'
+import Spinner from './Spinner'
 
 import FeedbackContext from '../context/FeedbackContext'
 

@@ -1,4 +1,4 @@
-function RatingSelect({ select, selected }) {
+function Rating({ select, selected }) {
   /**
    * Converts the value of e.currentTarget.value into a number.
    * No need for global or local state, use regular (select) javascript prop
@@ -40,4 +40,4 @@ function RatingSelect({ select, selected }) {
   )
 }
 
-export default RatingSelect
+export default Rating

@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
 
-import Card from '../shared/Card'
-import Button from '../shared/Button'
-import RatingSelect from './RatingSelect'
+import Card from './Card'
+import Button from './Button'
+import Rating from './Rating'
 
 import FeedbackContext from '../context/FeedbackContext'
 
@@ -67,7 +67,7 @@ function FeedbackForm() {
     <Card>
       <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
-        <RatingSelect select={setRating} selected={rating} />
+        <Rating select={setRating} selected={rating} />
         <div className='input-group'>
           <input
             onChange={handleTextChange}

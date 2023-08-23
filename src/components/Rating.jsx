@@ -1,7 +1,6 @@
 const Rating = props => {
 	const handleChange = e => {
-		// select(+e.currentTarget.value) // Shortcut
-		props.select(parseInt(e.currentTarget.value))
+		props.select(parseInt(e.currentTarget.value)) // +e.currentTarget.value
 	}
 
 	return (

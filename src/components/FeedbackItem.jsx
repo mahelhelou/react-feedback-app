@@ -7,10 +7,6 @@ import Card from './Card'
 import FeedbackContext from '../context/FeedbackContext'
 
 const FeedbackItem = props => {
-	/* const handleClick = (id) => {
-    console.log(id)
-  } */
-
 	const { deleteFeedback, feedbackEdit } = useContext(FeedbackContext)
 
 	return (

@@ -1,14 +1,14 @@
 # React Feedback App
 
-> This project was developed by me during the course of `React Front to Back`, which is a udemy course taught by Brad Traversy.
+> I developed this project, Feedback App, during the course of `React Front to Back`, a Udemy course taught by Brad Traversy.
 
 ## What I Have Learned From the Course?
 
 - React components
-- JSX syntax and features
+- JSX syntax
 - React hooks
-- React With Backend Api
 - Events handling
 - Form validation
-- Component-level and global-level state management (useState, context api)
-- And many many more
+- State management
+  - Component state or local state (useState)
+  - App state or global state (Context API)

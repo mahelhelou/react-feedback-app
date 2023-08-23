@@ -1,24 +1,14 @@
 {
   "feedback": [
     {
-      "text": "I can't live without you.  Hahahah, I am kidding.",
-      "rating": 5,
+      "text": "Starting from the scratch.",
+      "rating": 10,
       "id": 1
     },
     {
-      "text": "It was a very bad experiment to work with you.",
-      "rating": 5,
+      "text": "Doing the hard things first.",
+      "rating": 8,
       "id": 2
-    },
-    {
-      "text": "Elhelou is a great eCommerce developer.",
-      "rating": 10,
-      "id": 3
-    },
-    {
-      "text": "I am very sleepy and will continue the work morning...",
-      "rating": 1,
-      "id": 4
     }
   ]
 }
